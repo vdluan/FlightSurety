@@ -1,42 +1,52 @@
 # FlightSurety
-This project is to manage airline and allow passenger to buy insurance. It allows:
- **** Airline:****
-    . Register airline
-    . After registering, airline must fund at least 10ETH to participate in the program: have rights to add other airlines (contract owner adds first 3     airline then from the fifth, all airlines have the right to vote, airline which has >=50% vote will be added to the program).
-    . Register Flights
-    . Credit Insurance: when a flight is late because of the airline fault, the airline must credit insurance for 1.5 times the price passenger paid for insurance of this flight.
-  
-  **Passenger:**
-    . Buy insurace for a flight
-    . Claim Insurance (after airline credit insurance)
 
-**Design**
-  Smart contracts:
-    FlightSuretyData: data related to airline, flight, passenger and insurance are stored here
-    FlightSuretyApp: for app logic and oracles
-  Server:
-    to simulate oracle: register oracle and waiting for request from smart contract about flight status and reply with status of the flight
-    to run server: npm run server
-  Dapp:
-    to run: npm run dapp
-    flow of program on dapp:
-    Input ether address of Airline
-    Input airline name
-    Click "register airline"
-    Input amount to fund for this airline. Click "Fund"! Please note, airline must fund at least 10 eth to participate in the program: voting and register flight
-    Input ether address of passenger and amount to buy insurance. Click "Buy Insurance".
-    
-    Click on "Submit to oracle" to trigger event to oracle.
-    To view flight status, click "View Flight Status"
-    If status is airline late-> airline will click on "Credit Insurance" to credit insurance for passenger, it has not yet paid to passenger wallet.
-    Passenger will click on "Claim Insurance" to receive eth in their wallet.
-    It is the ending cycle of the program.
-    
-    System requirement:
-    Truffle v5
-    Solidity v0.5.16
-    Node v16.14.12
-    Web3.js v1.2.6
-    
-    
-    
+FlightSurety is a sample application project for Udacity's Blockchain course.
+
+## Install
+
+This repository contains Smart Contract code in Solidity (using Truffle), tests (also using Truffle), dApp scaffolding (using HTML, CSS and JS) and server app scaffolding.
+
+To install, download or clone the repo, then:
+
+`npm install`
+`truffle compile`
+
+## Develop Client
+
+To run truffle tests:
+
+`truffle test ./test/flightSurety.js`
+`truffle test ./test/oracles.js`
+
+To use the dapp:
+
+`truffle migrate`
+`npm run dapp`
+
+To view dapp:
+
+`http://localhost:8000`
+
+## Develop Server
+
+`npm run server`
+`truffle test ./test/oracles.js`
+
+## Deploy
+
+To build dapp for prod:
+`npm run dapp:prod`
+
+Deploy the contents of the ./dapp folder
+
+
+## Resources
+
+* [How does Ethereum work anyway?](https://medium.com/@preethikasireddy/how-does-ethereum-work-anyway-22d1df506369)
+* [BIP39 Mnemonic Generator](https://iancoleman.io/bip39/)
+* [Truffle Framework](http://truffleframework.com/)
+* [Ganache Local Blockchain](http://truffleframework.com/ganache/)
+* [Remix Solidity IDE](https://remix.ethereum.org/)
+* [Solidity Language Reference](http://solidity.readthedocs.io/en/v0.4.24/)
+* [Ethereum Blockchain Explorer](https://etherscan.io/)
+* [Web3Js Reference](https://github.com/ethereum/wiki/wiki/JavaScript-API)

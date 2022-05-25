@@ -1,0 +1,8 @@
+{
+	"network": {
+		"url": "http://localhost:8545",
+		"dataAddress": "0x3bf9caFE75Dc98D37b761DF6BE0e93FA85a5e471",
+		"appAddress": "0xDaA2403bca6E3A96D6572F2B4AE582C756324535",
+		"oracleAddress": "0xDaA2403bca6E3A96D6572F2B4AE582C756324535"
+	}
+}
